@@ -2,47 +2,147 @@
 #include <math.h>
 
 class math_calculator_scientific {
-double x, y; 
+double value_one, value_two; 
 public:
 
-void value_setter() //standard encapsulation, via Setter.
+void value_setter() 
 {
-double xc284, xc285; //actual ommitted addresses of where the values are stored in memory :P    
+double value_onec284, value_onec285; 
 std::cout<<"enter the first number:"<<std::endl;
-std::cin>>xc284;
-while(1){ //simple way to catch incorrect inputs :P
+std::cin>>value_onec284;
+while(1){ 
 if(std::cin.fail())
 {  
 std::cin.clear();
 std::cin.ignore();
-std::cout<<"number is invalid, try another number:"<<std::endl;
-std::cin>>xc284;
+std::cout<<"number is invalid, trvalue_two another number:"<<std::endl;
+std::cin>>value_onec284;
 }
 if(!std::cin.fail())
 break;
 }
 std::cout<<"enter the second number:"<<std::endl;
-std::cin>>xc285;
+std::cin>>value_onec285;
 while(1){
 if(std::cin.fail())
 {  
 std::cin.clear();
 std::cin.ignore();
-std::cout<<"number is invalid, try another number:"<<std::endl;
-std::cin>>xc285;
+std::cout<<"number is invalid, trvalue_two another number:"<<std::endl;
+std::cin>>value_onec285;
 }
 if(!std::cin.fail())
 break;
 }
-x = xc284;
-y = xc285;
+value_one = value_onec284;
+value_two = value_onec285;
 
 }
 
-
-
-int main()
+void get_value()//ditto, via Getter.
 {
-
-
+    std::cout<<"Value of the First Operand: "<<value_one<<std::endl;
+    std::cout<<"Value of the Second Operand:"<<value_two<<std::endl;
 }
+
+double add ()
+{
+    std::cout<< value_one + value_two;
+}
+
+double subtract ()
+{
+    std::cout<< value_one - value_two;
+}
+
+double multiplvalue_two ()
+{
+    std::cout<< value_one * value_two;
+}
+
+double divide ()
+{
+    if(value_two==0)
+    {
+     std::cout<<"You Entered a Null value as the dividand, Undefined.\n";
+
+    }
+    std::cout<< value_one / value_two;
+}
+
+double sqroot ()
+{
+    std::cout<< sqrt(value_one);
+}
+
+double log_simple ()
+{
+    std::cout<< log(value_one);
+}
+
+double log_base ()
+{
+    std::cout<< log10(value_one);
+}
+
+double sine ()
+{
+    std::cout<< sin(value_one);
+}
+
+double cosine ()
+{
+    std::cout<< cos(value_one);
+}
+
+double tangent ()
+{
+    std::cout<< tan(value_one);
+}
+
+double arc_sine ()
+{
+    std::cout<< asin(value_one);
+}
+
+double arc_cosine ()
+{
+    std::cout<< acos(value_one);
+}
+
+double arc_tan ()
+{
+    std::cout<< atan(value_one);
+}
+
+double sineh ()
+{
+    std::cout<< sinh(value_one);
+}
+
+double cosineh ()
+{
+    std::cout<< cosh(value_one);
+}
+
+double tangenth ()
+{
+    std::cout<< tanh(value_one);
+}
+
+double cube ()
+{
+    std::cout<< value_one*value_one*value_one;
+}
+
+double power ()
+{
+    std::cout<<pow(value_one,value_two);
+}
+
+double average ()
+{
+    std::cout<<(value_one+value_two)/2;
+}
+
+};
