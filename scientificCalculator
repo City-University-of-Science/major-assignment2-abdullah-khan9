@@ -1,272 +1,294 @@
-//Reg id 12064
-#include <iostream>
-#include <math.h>
+//Name : Abdullah Khan
+//ID   :12064
 
-class math_calculator_scientific {
-double value_one, value_two; 
-public:
-
-void value_setter() 
-{
-double value_onec284, value_onec285; 
-std::cout<<"enter the first number:"<<std::endl;
-std::cin>>value_onec284;
-while(1){ 
-if(std::cin.fail())
-{  
-std::cin.clear();
-std::cin.ignore();
-std::cout<<"number is invalid, trvalue_two another number:"<<std::endl;
-std::cin>>value_onec284;
-}
-if(!std::cin.fail())
-break;
-}
-std::cout<<"enter the second number:"<<std::endl;
-std::cin>>value_onec285;
-while(1){
-if(std::cin.fail())
-{  
-std::cin.clear();
-std::cin.ignore();
-std::cout<<"number is invalid, trvalue_two another number:"<<std::endl;
-std::cin>>value_onec285;
-}
-if(!std::cin.fail())
-break;
-}
-value_one = value_onec284;
-value_two = value_onec285;
-
-}
-
-void get_value()//ditto, via Getter.
-{
-    std::cout<<"Value of the First Operand: "<<value_one<<std::endl;
-    std::cout<<"Value of the Second Operand:"<<value_two<<std::endl;
-}
-
-double add ()
-{
-    std::cout<< value_one + value_two;
-}
-
-double subtract ()
-{
-    std::cout<< value_one - value_two;
-}
-
-double multiplvalue_two ()
-{
-    std::cout<< value_one * value_two;
-}
-
-double divide ()
-{
-    if(value_two==0)
-    {
-     std::cout<<"You Entered a Null value as the dividand, Undefined.\n";
-
-    }
-    std::cout<< value_one / value_two;
-}
-
-double sqroot ()
-{
-    std::cout<< sqrt(value_one);
-}
-
-double log_simple ()
-{
-    std::cout<< log(value_one);
-}
-
-double log_base ()
-{
-    std::cout<< log10(value_one);
-}
-
-double sine ()
-{
-    std::cout<< sin(value_one);
-}
-
-double cosine ()
-{
-    std::cout<< cos(value_one);
-}
-
-double tangent ()
-{
-    std::cout<< tan(value_one);
-}
-
-double arc_sine ()
-{
-    std::cout<< asin(value_one);
-}
-
-double arc_cosine ()
-{
-    std::cout<< acos(value_one);
-}
-
-double arc_tan ()
-{
-    std::cout<< atan(value_one);
-}
-
-double sineh ()
-{
-    std::cout<< sinh(value_one);
-}
-
-double cosineh ()
-{
-    std::cout<< cosh(value_one);
-}
-
-double tangenth ()
-{
-    std::cout<< tanh(value_one);
-}
-
-double cube ()
-{
-    std::cout<< value_one*value_one*value_one;
-}
-
-double power ()
-{
-    std::cout<<pow(value_one,value_two);
-}
-
-double average ()
-{
-    std::cout<<(value_one+value_two)/2;
-}
-
+#include<iostream>
+#include<math.h>
+using namespace std;
+ 	
+	class Scientific_calculator{
+		private:
+		int n;
+		double result, value[2], num1, num2;
+		
+		public:
+		//Calculator Simple Operation
+		void addition(){
+			cout<<"\nEnter Range of Numbers:";
+			cin>>n;
+			value[n];
+			for(int i = 1; i <= n; i++){
+				cout<<"\nEnter Number "<<i<<" : ";
+				cin>>value[i];
+				result = result + value[i];
+			}
+			cout<<"\n\nAddition = "<<result<<endl;
+			
+		}
+		
+		void subtraction(){
+		
+			cout<<"\nEnter Range of Numbers:";
+			cin>>n;
+			int totalValue;
+			cout<<"\nEnter the value to Subtract From: ";
+			cin>>totalValue;
+			value[n];
+			for(int i = 1; i<= n; i++){
+				cout<<"\nEnter Number "<<i<<" : ";
+				cin>>value[i];
+				totalValue -= value[i];
+				result = totalValue;
+			}
+			cout<<"\n\nSubtraction = "<<result<<endl;
+		}
+		
+		void multiplication(){
+			cout<<"\nEnter Range of values:";
+			cin>>n;
+			value[n];
+			for(int i = 1; i <= n; i++){
+				cout<<"\nEnter Number "<<i<<" : ";
+				cin>>value[i];
+				result = result * value[i];
+			}
+			cout<<"\n\nMultiplication = "<<result<<endl;
+		}
+		
+		void division(){
+		    
+			cout<<"\nEnter First Number:";
+			cin>>num1;
+			cout<<"\nEnter Second Number:";
+			cin>>num2;
+			if(num2 != 0){
+			result = num1;
+			result = result / num2;
+			cout<<"\n\nDivision is = "<<result<<endl;
+			}
+			else{
+				cout<<"\n\nUndefined (denomenator is 0).\n";
+			}
+		}
+		
+		void modulus(){
+			
+			int num1, num2;
+			cout<<"\nEnter First Number:";
+			cin>>num1;
+			cout<<"\nEnter Second Number:";
+			cin>>num2;
+			result = num1 % num2;
+			cout<<"\n\nModulus = "<<result<<endl;
+		}
+		
+		void squaroot(){
+			
+			cout<<"\nEnter Number: ";
+			cin>>num1;
+			result = sqrt(num1);
+			cout<<"\n\nSquare Root = "<<result<<endl;
+		}
+		
+		void power(){
+			
+			int pow;
+			cout<<"\nEnter The Power:";
+			cin>>pow;
+			cout<<"\nEnter The Number:";
+			cin>>num1;
+			result=num1;
+			for(int i = 0; i < pow-1; i++){
+				result = result * num1;
+			}
+			cout<<"\n\nPower = "<<result<<endl;
+		}
+		
+		void per(){
+			
+			double obtain_marks,total_marks;
+			cout<<"\nEnter Total Marks:";
+			cin>>total_marks;
+			cout<<"\nEnter Obtain Marls:";
+			cin>>obtain_marks;
+			result = (obtain_marks*100) / total_marks;
+			cout<<"\n\nPercentage = "<<result<<endl;
+		}
+		
+		void cube(){
+		
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = num1 * num1 * num1;
+			cout<<"\nCube of "<<num1<<" is = "<<result<<endl;	
+		}
+		
+		void average(){
+			cout<<"\nEnter the Range of numbers";
+			cin>>n;
+			value[n];
+			for(int i = 1; i <= n; i++){
+				cout<<"\nEnter Number "<<i<<" : ";
+				cin>>value[i];
+				result += value[i];
+			}
+			result = result/n;
+			cout<<"\n\nAverage = "<<result<<endl;
+		}
+		
+		//Calculator Trignometric Operation
+		
+		void logrithm(){
+			
+			cout<<"\nEnter Number: ";
+			cin>>num1;
+			result = log(num1);
+			cout<<"\nLogrithm = "<<result<<endl;
+		}
+		
+		void sinValue(){
+		
+			cout<<"\nEnter Number: ";
+			cin>>num1;
+			result = sin(num1);
+			cout<<"\n\nSin value= "<<result<<endl;
+		}
+		
+		void tanValue(){
+		
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = tan(num1);
+			cout<<"\n\nTan value = "<<result<<endl;
+		}
+		
+		void cosValue(){
+			
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = cos(num1);
+			cout<<"\n\nCos value = "<<result<<endl;
+		}
+		
+		void acosValue(){
+			
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = acos(num1);
+			cout<<"\n\nacos value = "<<result<<endl;
+		}
+		
+		void asinValue(){
+			
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = asin(num1);
+			cout<<"\n\nasin value = "<<result<<endl;
+		}
+		
+		void atanValue(){
+			
+			cout<<"\nEnter Number:";
+			cin>>num1;
+			result = atan(num1);
+			cout<<"\n\natan value = "<<result<<endl;
+		}
 };
-
-
-int main()
-{
-
-math_calculator_scientific cal;
-cal.value_setter(); //at least set the values first, unless value_twoou want "1.4822e-322" printed out as the result.
-int operation;
-std::cout<<"enter the operation value_twoou would like to perform:\n0 to enter values, 1 for addition , 2 for subtraction,3 for multiplication, 4 for division,";
-std::cout<<"\n5 for sin , 6 for cos, 7 for tan,";
-std::cout<<"8 for asin(arcsine), 9 for acos(arccosine), 10 for atan(arctangent),";
-std::cout<<"\n11 for sinh(sine hvalue_twoperbolic), 12 for cosh(cos hvalue_twoperbolic), 13 tanh(tan hvalue_twoperbolic)";
-std::cout<<"\n 14 for cube, 15 for average, 16 power, 17 to evalue_oneit.\n";
-
-
-do{
-std::cout<<"\nYour Choice: \n";std::cin>>operation;
-while(1){//Now Listen Here, No Wrong Inputs are getting past this point!
-if(std::cin.fail())
-{  
-std::cin.clear();
-std::cin.ignore();
-std::cout<<"invalid option. Trvalue_two Again"<<std::endl;
-std::cin>>operation;
-}
-if(!std::cin.fail())//congratulations, value_twoou aren't the wrong input tvalue_twope.
-break;
-}  
-switch(operation)
-{
-    double result;
-case 0:
-cal.value_setter();
-    break;
-
-case 1:
-    result = cal.add();
-    break;
-
-case 2:
-    result = cal.subtract();
-    break;
-
-case 3:
-    result = cal.multiplvalue_two();
-    break;
-
-case 4:
-    result = cal.divide();
-    break;
-
-case 5:
-    result = cal.sine();
-
-    break;
-
-case 6:
-    result = cal.cosine();
- 
-    break;
-
-case 7:
-    result = cal.tangent();
-
-    break;
-
-case 8:
-    result = cal.arc_sine();
-
-    break;
-
-case 9:
-    result = cal.arc_cosine();
-
-    break;
-
-case 10:
-    result = cal.arc_tan();
-
-    break;
-
-case 11:
-    result = cal.sineh();
-
-    break;
-
-case 12:
-    result = cal.cosineh();
-
-    break;
-
-case 13:
-    result = cal.tangenth();
-
-    break;
-
-case 14:
-    result = cal.cube();
-
-    break;
-
-case 15:
-    result = cal.average();
- 
-    break;
-
-case 16:
-    result = cal.power();
-    break;
-
-default:
-    std::cout<<"Whatever value_two entered, Is invalid. Re-enter it >:(";
-    break;
-}
-
-
-
-
-}while(operation != 17);
-
-return 0;
-
+	
+int main(){
+	Scientific_calculator cal;
+	int operation;
+	cout<<" \n*********** ( Scientific Calculator ) ***********\n"<<endl;
+	cout<<" Enter 1 for Addition"<<endl;
+	cout<<" Enter 2 for Subtaction"<<endl;
+	cout<<" Enter 3 for Division"<<endl;
+	cout<<" Enter 4 for Multilpication"<<endl;
+	cout<<" Enter 5 for Modulus"<<endl;
+	cout<<" Enter 6 for Square root"<<endl;
+	cout<<" Enter 7 for Power"<<endl;
+	cout<<" Enter 8 for Cube"<<endl;
+	cout<<" Enter 9 for Average of numbers"<<endl;
+	cout<<" Enter 10 for Percentage"<<endl;
+	cout<<" Enter 11 for Logrithm"<<endl;
+	cout<<" Enter 12 for Sin"<<endl;
+	cout<<" Enter 13 for tan"<<endl;
+	cout<<" Enter 14 for cos"<<endl;
+	cout<<" Enter 15 for acos"<<endl;
+	cout<<" Enter 16 for asin"<<endl;
+	cout<<" Enter 17 for atan"<<endl;
+	cout<<"\nChoose Operation : ";
+	cin>>operation;
+	switch(operation){
+		case 1:
+			cal.addition();
+			main();
+			break;
+		case 2:
+			cal.subtraction();
+			main();
+			break;
+		case 3:
+			cal.division();
+			main();
+			break;
+		case 4:
+			cal.multiplication();
+			main();
+			break;
+		case 5:
+			cal.modulus();
+			main();
+			break;
+		case 6:
+			cal.squaroot();
+			main();
+			break;
+		case 7:
+			cal.power();
+			main();
+			break;
+		case 8:
+			cal.cube();
+			main();
+			break;
+		case 9:
+			cal.average();
+			main();
+			break;
+		case 10:
+			cal.per();
+			main();
+			break;
+		case 11:			
+			cal.logrithm();
+			main();
+			break;
+		case 12:
+			cal.sinValue();
+			main();
+			break;
+		case 13:
+			cal.tanValue();
+			main();
+			break;
+		case 14:
+			cal.cosValue();
+			main();
+			break;
+		case 15:
+			cal.acosValue();
+			main();
+			break;
+		case 16:
+			cal.asinValue();
+			main();
+			break;
+		case 17:
+			cal.atanValue();
+			main();
+			break;
+		default:
+			cout<<"\n Invalid Input! Please Enter valid Operation.";
+			
+		
+	}
 }
