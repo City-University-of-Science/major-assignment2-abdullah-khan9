@@ -1,4 +1,5 @@
-#include <iostream> //reg id : 12064
+//Reg id 12064
+#include <iostream>
 #include <math.h>
 
 class math_calculator_scientific {
@@ -155,9 +156,8 @@ math_calculator_scientific cal;
 cal.value_setter(); //at least set the values first, unless value_twoou want "1.4822e-322" printed out as the result.
 int operation;
 std::cout<<"enter the operation value_twoou would like to perform:\n0 to enter values, 1 for addition , 2 for subtraction,3 for multiplication, 4 for division,";
-std::cout<<"1 for square root, 2 for natural log, 3 for log to the base 10,";
 std::cout<<"\n5 for sin , 6 for cos, 7 for tan,";
-std::cout<<"\n8 for asin(arcsine), 9 for acos(arccosine), 10 for atan(arctangent),";
+std::cout<<"8 for asin(arcsine), 9 for acos(arccosine), 10 for atan(arctangent),";
 std::cout<<"\n11 for sinh(sine hvalue_twoperbolic), 12 for cosh(cos hvalue_twoperbolic), 13 tanh(tan hvalue_twoperbolic)";
 std::cout<<"\n 14 for cube, 15 for average, 16 power, 17 to evalue_oneit.\n";
 
