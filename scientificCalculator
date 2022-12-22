@@ -108,7 +108,7 @@ using namespace std;
 			double obtain_marks,total_marks;
 			cout<<"\nEnter Total Marks:";
 			cin>>total_marks;
-			cout<<"\nEnter Obtain Marls:";
+			cout<<"\nEnter Obtain MarKs:";
 			cin>>obtain_marks;
 			result = (obtain_marks*100) / total_marks;
 			cout<<"\n\nPercentage = "<<result<<endl;
